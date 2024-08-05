@@ -23,6 +23,11 @@ jobs:
         run: |
           sudo rm -rf /usr/local/{bin,lib/node_modules}
           sudo rm -rf ~/.npm
+      - name: Install Node Version 20
+        run: |
+          sudo apt-get update
+          curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+          sudo apt-get install -y nodejs
           
       - name: Set up Node.js
         uses: actions/setup-node@v2
