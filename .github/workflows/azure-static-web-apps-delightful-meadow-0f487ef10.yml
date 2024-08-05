@@ -19,6 +19,11 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Clear cache
+        run: |
+          sudo rm -rf /usr/local/{bin,lib/node_modules}
+          sudo rm -rf ~/.npm
+          
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with: 
